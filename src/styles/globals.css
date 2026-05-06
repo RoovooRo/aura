@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-ink-900 text-slate-100 font-body antialiased;
+    background-image:
+      radial-gradient(1200px 600px at 50% -20%, rgba(245, 197, 74, 0.06), transparent 60%),
+      radial-gradient(900px 600px at 80% 110%, rgba(90, 215, 255, 0.05), transparent 60%);
+    background-attachment: fixed;
+  }
+
+  *:focus-visible {
+    @apply outline-none ring-2 ring-aura-arc/70 ring-offset-2 ring-offset-ink-900 rounded-sm;
+  }
+}
+
+@layer components {
+  .aura-gradient-text {
+    background: linear-gradient(135deg, #f5c54a 0%, #ff6a3d 50%, #5ad7ff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
