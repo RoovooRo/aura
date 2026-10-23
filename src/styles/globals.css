@@ -1,6 +1,14 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@config "../../tailwind.config.js";
+
+@theme {
+  --color-slate-50: #f8fafc;
+  --color-slate-100: #f1f5f9;
+  --color-slate-200: #e2e8f0;
+  --color-slate-300: #cbd5e1;
+  --color-slate-400: #94a3b8;
+  --color-slate-500: #64748b;
+}
 
 @layer base {
   :root {
@@ -21,8 +29,17 @@
     background-attachment: fixed;
   }
 
+  button,
+  [role="button"] {
+    cursor: pointer;
+  }
+
+  :disabled {
+    cursor: default;
+  }
+
   *:focus-visible {
-    @apply outline-none ring-2 ring-aura-arc/70 ring-offset-2 ring-offset-ink-900 rounded-sm;
+    @apply outline-hidden ring-2 ring-aura-arc/70 ring-offset-2 ring-offset-ink-900 rounded-xs;
   }
 }
 
